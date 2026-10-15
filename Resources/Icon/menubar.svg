@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <!-- Menu bar template: black on clear; macOS tints it for light and dark menu bars.
+       The app icon's ferret head as a solid silhouette, with the eyes cut out. -->
+  <defs>
+    <mask id="m" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+      <rect x="0" y="0" width="1024" height="1024" fill="#fff"/>
+      <path d="M346 462 C366 422 418 414 446 442 C424 478 374 488 346 462 Z" fill="#000"/>
+      <path d="M594 462 C574 422 522 414 494 442 C516 478 566 488 594 462 Z" fill="#000"/>
+    </mask>
+  </defs>
+  <g transform="translate(2.4 2.2) scale(0.0866) translate(-284 -306)" fill="#000">
+    <g mask="url(#m)">
+    <circle cx="330" cy="356" r="50"/>
+    <circle cx="610" cy="356" r="50"/>
+    <path d="M470 296 C556 296 620 340 626 418 C632 494 588 576 530 636 C504 662 436 662 410 636 C352 576 308 494 314 418 C320 340 384 296 470 296 Z"/>
+    </g>
+
+  </g>
+</svg>

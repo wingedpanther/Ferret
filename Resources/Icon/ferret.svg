@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <!-- Tile: Gruvbox bg1 at the top fading to bg0_h. -->
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3c3836"/>
+      <stop offset="1" stop-color="#1d2021"/>
+    </linearGradient>
+    <radialGradient id="tileGlow" cx="0.5" cy="0.47" r="0.5">
+      <stop offset="0" stop-color="#d79921" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#d79921" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="16" cy="16" r="1.6" fill="#ebdbb2" fill-opacity="0.07"/>
+    </pattern>
+    <filter id="tileShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+
+
+    <!-- Ferret. -->
+    <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ebdbb2"/>
+      <stop offset="1" stop-color="#bdae93"/>
+    </linearGradient>
+    <linearGradient id="mask" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3c3836"/>
+      <stop offset="1" stop-color="#1d2021"/>
+    </linearGradient>
+    <radialGradient id="eye" cx="0.45" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#fbf1c7"/>
+      <stop offset="0.45" stop-color="#fabd2f"/>
+      <stop offset="1" stop-color="#d79921"/>
+    </radialGradient>
+    <linearGradient id="nose" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e5a3b3"/>
+      <stop offset="1" stop-color="#b16286"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-200%" width="260%" height="500%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="chinShadow" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="10"/></filter>
+    <clipPath id="tileClip"><rect x="100" y="100" width="824" height="824" rx="186"/></clipPath>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7c6f64"/>
+      <stop offset="1" stop-color="#3c3836"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Tile -->
+  <g filter="url(#tileShadow)">
+    <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#tile)"/>
+  </g>
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#dots)"/>
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#tileGlow)"/>
+
+  <!-- Ferret, peeking up from the bottom edge of the tile (drawn at 1.55x, centred) -->
+  <g clip-path="url(#tileClip)">
+    <g transform="translate(-216.5 -208.8) scale(1.55)">
+      <!-- neck and body: sable brown, so the pale face stands out -->
+      <path d="M374 560 C368 632 352 684 306 722 C270 752 236 774 196 800 L744 800 C704 774 670 752 634 722 C588 684 572 632 566 560 Z" fill="url(#body)"/>
+      <!-- soft shadow where the chin meets the neck -->
+      <ellipse cx="470" cy="652" rx="96" ry="22" fill="#000" fill-opacity="0.35" filter="url(#chinShadow)"/>
+
+    <!-- ears -->
+    <circle cx="330" cy="352" r="46" fill="#bdae93"/>
+    <circle cx="332" cy="356" r="25" fill="#d3869b" fill-opacity="0.8"/>
+    <circle cx="610" cy="352" r="46" fill="#bdae93"/>
+    <circle cx="608" cy="356" r="25" fill="#d3869b" fill-opacity="0.8"/>
+    <!-- head: narrow and long, tapering to the snout -->
+    <path d="M470 296 C556 296 620 340 626 418 C632 494 588 576 530 636 C504 662 436 662 410 636 C352 576 308 494 314 418 C320 340 384 296 470 296 Z" fill="url(#fur)"/>
+    <!-- bandit mask, with the pale stripe up the forehead -->
+    <path d="M314 436 C336 382 408 374 448 410 L470 450 L492 410 C532 374 604 382 626 436 C624 492 582 524 540 518 C508 514 492 494 470 494 C448 494 432 514 400 518 C358 524 316 492 314 436 Z" fill="url(#mask)"/>
+    <!-- eye glow -->
+    <g fill="#fabd2f" opacity="0.9" filter="url(#glow)">
+      <path d="M352 458 C370 424 414 418 440 442 C420 472 376 480 352 458 Z"/>
+      <path d="M588 458 C570 424 526 418 500 442 C520 472 564 480 588 458 Z"/>
+    </g>
+    <!-- eyes: glowing almonds, outer corners raised, no pupils -->
+    <path d="M352 458 C370 424 414 418 440 442 C420 472 376 480 352 458 Z" fill="url(#eye)"/>
+    <path d="M588 458 C570 424 526 418 500 442 C520 472 564 480 588 458 Z" fill="url(#eye)"/>
+    <ellipse cx="392" cy="444" rx="9" ry="6" fill="#fbf1c7" fill-opacity="0.9"/>
+    <ellipse cx="548" cy="444" rx="9" ry="6" fill="#fbf1c7" fill-opacity="0.9"/>
+    <!-- muzzle -->
+    <path d="M470 520 C526 520 556 556 548 604 C540 644 504 664 470 664 C436 664 400 644 392 604 C384 556 414 520 470 520 Z" fill="#fbf1c7"/>
+    <!-- nose -->
+    <path d="M448 562 C448 546 492 546 492 562 C492 578 480 588 470 590 C460 588 448 578 448 562 Z" fill="url(#nose)"/>
+    <path d="M470 590 L470 606" stroke="#a89984" stroke-width="5" stroke-linecap="round"/>
+    <!-- whiskers -->
+    <g stroke="#ebdbb2" stroke-opacity="0.4" stroke-width="3.5" stroke-linecap="round" fill="none">
+      <path d="M404 590 C364 584 330 588 296 600"/>
+      <path d="M408 606 C372 608 340 618 310 634"/>
+      <path d="M536 590 C576 584 610 588 644 600"/>
+      <path d="M532 606 C568 608 600 618 630 634"/>
+    </g>
+    </g>
+  </g>
+
+  <rect x="101.5" y="101.5" width="821" height="821" rx="184.5" fill="none" stroke="#fbf1c7" stroke-opacity="0.09" stroke-width="3"/>
+</svg>
